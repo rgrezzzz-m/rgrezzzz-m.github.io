@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Portafolio de diplomas, Ricardo Grez</title>
+<title>Acerca de mí, Ricardo Grez</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
 <style>
@@ -30,7 +30,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1
 @media (min-width:920px){.layout{grid-template-columns:280px minmax(0,1fr);gap:56px}.bio{position:sticky;top:calc(24px + env(safe-area-inset-top, 0px));align-self:start;max-height:calc(100vh - 48px);overflow:auto}}
 .bio{display:flex;flex-direction:column;gap:20px;min-width:0}
 .photo{display:block;width:100%;max-width:280px;height:auto;aspect-ratio:560/642;object-fit:cover;border-radius:6px;background:var(--chip)}
-.bio h1{font-size:1.7rem}
+.bio h2{font-size:1.7rem}
 .bio .role{color:var(--muted);font-size:.98rem;line-height:1.45}
 .bio .place{font-size:.88rem;color:var(--muted)}
 .bio .block{display:flex;flex-direction:column;gap:8px}
@@ -80,6 +80,16 @@ footer{font-size:.85rem;color:var(--muted);border-top:1px solid var(--line);padd
 @media (max-width:520px){h1{font-size:1.75rem}.program,.feature{padding:16px}}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
 html{scroll-behavior:smooth}
+.exp{display:flex;flex-direction:column;gap:6px;padding:16px 0;border-top:1px solid var(--line)}
+.exp:first-of-type{border-top:0;padding-top:0}
+.exp .co{color:var(--muted);font-size:.95rem}
+.edu{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:18px 22px;display:flex;flex-direction:column;gap:4px}
+.sec{display:flex;flex-direction:column;gap:16px}
+.secnav{display:flex;flex-wrap:wrap;gap:8px}
+.secnav a{font-family:var(--f-mono);font-size:.8rem;text-decoration:none;background:var(--chip);color:var(--ink);padding:5px 10px;border-radius:4px}
+.secnav a:hover{color:var(--blue)}
+h2.part{font-size:1.7rem;padding-top:8px}
+
 </style>
 </head>
 <body>
@@ -88,23 +98,17 @@ html{scroll-behavior:smooth}
 <aside class="bio" aria-label="Biografía">
   <img class="photo" src="foto_ricardo_grez.jpg" width="560" height="642" alt="Retrato de Ricardo Grez">
   <div class="block">
-    <h1>Ricardo Grez</h1>
+    <h2>Ricardo Grez</h2>
     <p class="role">Líder comercial B2B en tecnología</p>
     <p class="place">Santiago, Chile</p>
     <div class="links"><a href="https://www.linkedin.com/in/ricardogrez/" target="_blank" rel="noopener">LinkedIn</a></div>
-  </div>
-  <div class="block">
-    <span class="label">Sobre mí</span>
-    <p>Más de 10 años en venta consultiva y desarrollo de negocios B2B de soluciones y servicios TI para corporaciones y sector público en Chile y la región, en Gobierno, Salud, Educación y Utilities.</p>
-    <p>He liderado territorios corporativos, una célula de cloud público y equipos comerciales, con cuentas estratégicas, licitaciones públicas y ecosistemas de partners como Google, AWS y Huawei.</p>
-    <p>Me interesa la venta que parte del negocio del cliente. Hoy sumo conocimientos aplicados de IA generativa y agéntica para resolver problemas de negocio.</p>
   </div>
   <div class="block">
     <span class="label">Formación</span>
     <ul>
       <li><a href="#programa-ia">Diploma de postítulo en IA aplicada a los Negocios</a>, Universidad de Chile, 2026</li>
       <li><a href="#uai">Diploma de postítulo en Dirección Comercial y Ventas</a>, Universidad Adolfo Ibáñez, 2017</li>
-      <li>Cientista Político y Gerencia Pública, Universidad Central de Chile, 2002</li>
+      <li>Cientista Político y título profesional en Gerencia Pública, Universidad Central de Chile, 2002</li>
     </ul>
   </div>
   <div class="block">
@@ -113,6 +117,56 @@ html{scroll-behavior:smooth}
   </div>
 </aside>
 <div class="wrap">
+<header class="sec" id="acerca">
+  <span class="label">Perfil</span>
+  <h1>Acerca de mí</h1>
+  <nav class="secnav" aria-label="Secciones">
+    <a href="#carrera">Carrera profesional</a>
+    <a href="#formacion">Formación académica</a>
+  </nav>
+</header>
+
+<section class="sec" id="carrera">
+  <h2 class="part">Resumen de carrera profesional</h2>
+  <p>Más de 10 años en venta consultiva y desarrollo de negocios B2B de soluciones y servicios TI para corporaciones y sector público en Chile y la región, en Gobierno, Salud, Educación y Utilities.</p>
+  <p>He liderado territorios corporativos, una célula de cloud público y equipos comerciales. Mi trabajo combina cuentas estratégicas y nuevos negocios: apertura de cuentas y canales, licitaciones públicas y estrategias go-to-market con ecosistemas de partners como Google, AWS y Huawei, cerrando y renovando contratos de largo plazo con responsabilidad sobre los ingresos y el EBITDA del territorio.</p>
+  <p>Me interesa la venta que parte del negocio del cliente: entender sus procesos, su flujo de caja y sus prioridades antes de hablar de tecnología. Hoy sumo a eso conocimientos aplicados de IA generativa y agéntica para resolver problemas de negocio, con el Diploma de postítulo en IA aplicada a los Negocios de la Escuela de Ingeniería Industrial de la Universidad de Chile.</p>
+
+  <span class="label" style="margin-top:12px">Experiencia</span>
+  <div class="exp">
+    <h3>Gerente de Cuentas Corporaciones, Gerencia Comercial VP B2B</h3>
+    <div class="co">Claro Empresas</div>
+    <div class="meta"><span>junio 2023 a septiembre 2026</span></div>
+    <p>Estrategia y liderazgo comercial del territorio corporativo en Sector Público, Educación, Salud, Utilities, integradores y vendors tecnológicos. Lideré la célula de desarrollo del negocio de cloud público, coordinando preventa, producto y channel partners. Renovaciones estratégicas en gobierno, educación y utilities, y nuevos logos en utilities y transporte público.</p>
+  </div>
+  <div class="exp">
+    <h3>Brand Sales Specialist, Technology Lifecycle Services</h3>
+    <div class="co">IBM Chile</div>
+    <div class="meta"><span>septiembre 2021 a mayo 2023</span></div>
+    <p>Venta de servicios de ciclo de vida tecnológico (infraestructura IBM y soporte multivendor) en Servicios Financieros, Retail, Manufactura y Gobierno. Cumplimiento sobre cuota y retención total de la base instalada. Top Performer de IBM Global Sales School.</p>
+  </div>
+  <div class="exp">
+    <h3>Key Account Manager</h3>
+    <div class="co">ORION</div>
+    <div class="meta"><span>marzo 2020 a septiembre 2021</span></div>
+    <p>Venta nueva y desarrollo de base instalada en cloud, ciberseguridad, infraestructura de datos y digital workplace para el sector público. Migraciones a la nube y modernización de aplicaciones en ministerios, y renovación de la cartera municipal de Google Workspace.</p>
+  </div>
+  <div class="exp">
+    <h3>Subgerente Comercial</h3>
+    <div class="co">EMACH, Integrador de Tecnologías y BPO</div>
+    <div class="meta"><span>agosto 2016 a marzo 2020</span></div>
+    <p>Plan anual de ventas y marketing, licitaciones públicas y liderazgo de un equipo de 5 ejecutivos. Estrategia de producto de biometría y seguridad electrónica en Chile, Bolivia y Perú, con red regional de partners.</p>
+  </div>
+  <div class="exp">
+    <h3>Key Account Manager</h3>
+    <div class="co">EMACH, Integrador de Tecnologías</div>
+    <div class="meta"><span>agosto 2015 a agosto 2016</span></div>
+    <p>Gestión de cuentas clave y licitaciones públicas.</p>
+  </div>
+</section>
+
+<h2 class="part" id="formacion">Formación académica</h2>
+
 <div class="program" id="programa-ia">
   <span class="label">Programa</span>
   <h2>Diploma de postítulo en Inteligencia Artificial aplicada a los Negocios</h2>
@@ -294,6 +348,12 @@ html{scroll-behavior:smooth}
     <div class="tags"><span>Liderar Organizaciones Orientadas al Cliente</span><span>Customer Marketing</span><span>Coaching para Equipos Comerciales</span><span>Negociación Comercial</span><span>Ventas</span></div>
   </div>
 </section>
+
+<div class="edu">
+  <span class="label">Título profesional</span>
+  <h3>Cientista Político y título profesional en Gerencia Pública</h3>
+  <p>Universidad Central de Chile. 1997 a 2002.</p>
+</div>
 
 <footer>Algunos trabajos se entregaron en grupo. Los datos de clientes y de terceros usados en los talleres no se publican.</footer>
 </div>
