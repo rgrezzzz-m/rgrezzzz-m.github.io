@@ -29,7 +29,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1
 .layout{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:40px}
 @media (min-width:920px){.layout{grid-template-columns:280px minmax(0,1fr);gap:56px}.bio{position:sticky;top:calc(24px + env(safe-area-inset-top, 0px));align-self:start;max-height:calc(100vh - 48px);overflow:auto}}
 .bio{display:flex;flex-direction:column;gap:20px;min-width:0}
-.photo{display:block;width:100%;max-width:125px;height:auto;aspect-ratio:560/642;object-fit:cover;border-radius:6px;background:var(--chip)}
+.photo{display:block;width:100%;max-width:94px;height:auto;aspect-ratio:560/642;object-fit:cover;border-radius:6px;background:var(--chip)}
 .bio h2{font-size:1.7rem}
 .bio .role{color:var(--muted);font-size:.98rem;line-height:1.45}
 .bio .place{font-size:.88rem;color:var(--muted)}
@@ -98,6 +98,15 @@ h2.part{font-size:1.7rem;padding-top:8px}
 html[lang="en"] .lang-es{display:none}
 html:not([lang="en"]) .lang-en{display:none}
 @media (min-width:920px){body{padding-top:56px}}
+.sechead{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px}
+.btn{font-family:var(--f-mono);font-size:.8rem;text-decoration:none;border:1px solid var(--blue);color:var(--blue);padding:6px 12px;border-radius:4px;white-space:nowrap}
+.btn:hover{background:var(--chip)}
+.btn:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.detail{display:flex;flex-direction:column;gap:44px}
+.back{font-family:var(--f-mono);font-size:.8rem;text-decoration:none}
+body[data-view="home"] .detail{display:none}
+body[data-view="estudios"] .homeonly{display:none}
+body:not([data-view]) .back{display:none}
 </style>
 </head>
 <body>
@@ -135,30 +144,42 @@ html:not([lang="en"]) .lang-en{display:none}
   </div>
   <div class="block">
     <span class="label">Intereses</span>
-    <div class="tags"><span>Multi Cloud</span><span>IA aplicada</span><span>Agentes</span><span>Sector público</span><span>Desarrollo de negocios</span></div>
+    <div class="tags"><span>Multi Cloud</span><span>IA aplicada a negocios</span><span>Sector público</span><span>Desarrollo de negocios</span></div>
   </div>
 </aside>
 <div class="wrap">
-<header class="sec" id="acerca">
+<header class="sec homeonly" id="acerca">
   <span class="label">Perfil</span>
   <h1>Acerca de mí</h1>
   <nav class="secnav" aria-label="Secciones">
-    <a href="#carrera">Carrera profesional</a>
+    <a href="#carrera">Experiencia laboral</a>
     <a href="#formacion">Formación académica</a>
   </nav>
 </header>
 
-<section class="sec" id="carrera">
-  <h2 class="part">Resumen de carrera profesional</h2>
+<section class="sec homeonly" id="carrera">
+  <div class="sechead"><h2 class="part">Experiencia laboral</h2><a class="btn" href="https://www.linkedin.com/in/ricardogrez/" target="_blank" rel="noopener">CV completo</a></div>
   <p>Más de 10 años en venta consultiva y desarrollo de negocios B2B de soluciones y servicios TI para corporaciones y sector público en Chile y la región, en Gobierno, Salud, Educación y Utilities.</p>
   <p>He liderado territorios corporativos, una célula de cloud público y equipos comerciales. Mi trabajo combina cuentas estratégicas y nuevos negocios: apertura de cuentas y canales, licitaciones públicas y estrategias go-to-market con ecosistemas de partners como Google, AWS y Huawei, cerrando y renovando contratos de largo plazo con responsabilidad sobre los ingresos y el EBITDA del territorio.</p>
   <p>Me interesa la venta que parte del negocio del cliente: entender sus procesos, su flujo de caja y sus prioridades antes de hablar de tecnología. Hoy sumo a eso conocimientos aplicados de IA generativa y agéntica para resolver problemas de negocio, con el Diploma de postítulo en IA aplicada a los Negocios de la Escuela de Ingeniería Industrial de la Universidad de Chile.</p>
-  <p>Actualmente me desempeño como consultor independiente y trabajo para un cliente en el desarrollo de Brújula de Marca, un MVP agéntico en etapa de pre-test que automatiza el capítulo de benchmark competitivo dentro del diagnóstico de marca para pymes, la etapa que concentra la mayor parte de las horas de trabajo experto. A partir de tres preguntas estructurales, el sistema deduce contra qué comparar, busca marcas de referencia con fuentes citadas, lee sus perfiles públicos con visión multimodal y propone candidatos a pilar de marca con su evidencia. La decisión final es siempre de una especialista, que aprueba o descarta cada candidato y deja su resolución registrada, y los cálculos de cobertura y confianza son deterministas, sin modelo de por medio. <strong>Está construido sobre el stack de Google, con Firebase y Gemini. La meta de diseño es pasar de unas 60 a 16,8 horas humanas por diagnóstico, y es una meta, no un resultado medido.</strong></p>
+  <p>Actualmente me desempeño como consultor independiente y trabajo para un cliente en el desarrollo de Brújula de Marca, un MVP agéntico en etapa de pre-test que automatiza el capítulo de benchmark competitivo dentro del diagnóstico de marca para pymes, la etapa que concentra la mayor parte de las horas de trabajo experto. A partir de tres preguntas estructurales, el sistema deduce contra qué comparar, busca marcas de referencia con fuentes citadas, lee sus perfiles públicos con visión multimodal y propone candidatos a pilar de marca con su evidencia. La decisión final es siempre de una especialista, que aprueba o descarta cada candidato y deja su resolución registrada, y los cálculos de cobertura y confianza son deterministas, sin modelo de por medio. Está construido sobre el stack de Google, con Firebase y Gemini. La meta de diseño es pasar de unas 60 a 16,8 horas humanas por diagnóstico, y es una meta, no un resultado medido.</p>
 
 </section>
 
-<h2 class="part" id="formacion">Formación académica</h2>
+<div class="sechead homeonly" id="formacion"><h2 class="part">Formación académica</h2><a class="btn" href="#estudios">Detalle de estudios</a></div>
+<div class="sec homeonly">
+<div class="edu"><span class="label">Diploma</span><h3>Diploma de postítulo en IA aplicada a los Negocios</h3><p>Universidad de Chile, Escuela de Ingeniería Industrial. Abril a octubre de 2026.</p></div>
+<div class="edu"><span class="label">Diploma</span><h3>Diploma de postítulo en Dirección Comercial y Ventas</h3><p>Universidad Adolfo Ibáñez, Escuela de Negocios. Marzo a diciembre de 2017.</p></div>
+<div class="edu" id="titulo">
+  <span class="label">Título profesional</span>
+  <h3>Cientista Político y título profesional de Administrador Público</h3>
+  <p>Universidad Central de Chile. 1997 a 2002.</p>
+  <p style="margin-top:8px">La formación incluyó una base cuantitativa y de gestión: economía, estadística, álgebra, contabilidad y estados de resultados, y evaluación de proyectos. Es la base con la que hoy armo business cases, analizo márgenes y EBITDA y respaldo una propuesta con números. En ese marco, la estadística es un habilitador de los procesos de datos y analítica que alimentan modelos.</p>
+  <div class="tags" style="margin-top:8px"><span>Economía</span><span>Estadística</span><span>Álgebra</span><span>Contabilidad y estados de resultados</span><span>Evaluación de proyectos</span></div>
+</div></div>
 
+<div class="detail" id="estudios">
+<div class="sec"><a class="back" href="#acerca">&larr; Volver al resumen</a><h1>Detalle de estudios</h1></div>
 <div class="program" id="programa-ia">
   <span class="label">Programa</span>
   <h2>Diploma de postítulo en Inteligencia Artificial aplicada a los Negocios</h2>
@@ -357,13 +378,9 @@ html:not([lang="en"]) .lang-en{display:none}
   </div>
 </section>
 
-<div class="edu">
-  <span class="label">Título profesional</span>
-  <h3>Cientista Político y título profesional de Administrador Público</h3>
-  <p>Universidad Central de Chile. 1997 a 2002.</p>
-  <p style="margin-top:8px">La formación incluyó una base cuantitativa y de gestión: economía, estadística, álgebra, contabilidad y estados de resultados, y evaluación de proyectos. Es la base con la que hoy armo business cases, analizo márgenes y EBITDA y respaldo una propuesta con números.</p>
-  <div class="tags" style="margin-top:8px"><span>Economía</span><span>Estadística</span><span>Álgebra</span><span>Contabilidad y estados de resultados</span><span>Evaluación de proyectos</span></div>
 </div>
+
+
 
 <footer>Algunos trabajos se entregaron en grupo. Los datos de clientes y de terceros usados en los talleres no se publican.</footer>
 </div>
@@ -398,30 +415,42 @@ html:not([lang="en"]) .lang-en{display:none}
   </div>
   <div class="block">
     <span class="label">Interests</span>
-    <div class="tags"><span>Multicloud</span><span>Applied AI</span><span>Agents</span><span>Public sector</span><span>Business development</span></div>
+    <div class="tags"><span>Multicloud</span><span>Applied AI for business</span><span>Public sector</span><span>Business development</span></div>
   </div>
 </aside>
 <div class="wrap">
-<header class="sec" id="acerca-en">
+<header class="sec homeonly" id="acerca-en">
   <span class="label">Profile</span>
   <h1>About me</h1>
   <nav class="secnav" aria-label="Sections">
-    <a href="#carrera-en">Professional career</a>
+    <a href="#carrera-en">Work experience</a>
     <a href="#formacion-en">Education</a>
   </nav>
 </header>
 
-<section class="sec" id="carrera-en">
-  <h2 class="part">Professional career summary</h2>
+<section class="sec homeonly" id="carrera-en">
+  <div class="sechead"><h2 class="part">Work experience</h2><a class="btn" href="https://www.linkedin.com/in/ricardogrez/" target="_blank" rel="noopener">Full CV</a></div>
   <p>Over 10 years of consultative selling and B2B business development of IT solutions and services for corporations and the public sector in Chile and the region, across Government, Healthcare, Education and Utilities.</p>
   <p>I have led corporate territories, a public cloud cell and commercial teams. My work combines strategic accounts and new business: opening accounts and channels, public tenders and go-to-market strategies with partner ecosystems such as Google, AWS and Huawei, closing and renewing long-term contracts with responsibility for territory revenue and EBITDA.</p>
   <p>I care about selling that starts from the client's business: understanding their processes, their cash flow and their priorities before talking about technology. Today I add applied knowledge of generative and agentic AI to solve business problems, through the Postgraduate Diploma in Artificial Intelligence Applied to Business at the School of Industrial Engineering of the Universidad de Chile.</p>
-  <p>I currently work as an independent consultant, developing Brújula de Marca for a client. It is an agentic MVP in pre-test stage that automates the competitive benchmark chapter of the brand diagnostic for small and medium businesses, the stage that takes most of the expert hours. From three structural questions, the system deduces what to compare against, searches for reference brands with cited sources, reads their public profiles with multimodal vision and proposes brand pillar candidates with their evidence. The final decision always belongs to a specialist, who approves or discards each candidate and leaves the resolution on record, and the coverage and confidence calculations are deterministic, with no model involved. <strong>It is built on the Google stack, with Firebase and Gemini. The design goal is to go from about 60 to 16.8 human hours per diagnostic, and it is a goal, not a measured result.</strong></p>
+  <p>I currently work as an independent consultant, developing Brújula de Marca for a client. It is an agentic MVP in pre-test stage that automates the competitive benchmark chapter of the brand diagnostic for small and medium businesses, the stage that takes most of the expert hours. From three structural questions, the system deduces what to compare against, searches for reference brands with cited sources, reads their public profiles with multimodal vision and proposes brand pillar candidates with their evidence. The final decision always belongs to a specialist, who approves or discards each candidate and leaves the resolution on record, and the coverage and confidence calculations are deterministic, with no model involved. It is built on the Google stack, with Firebase and Gemini. The design goal is to go from about 60 to 16.8 human hours per diagnostic, and it is a goal, not a measured result.</p>
 
 </section>
 
-<h2 class="part" id="formacion-en">Education</h2>
+<div class="sechead homeonly" id="formacion-en"><h2 class="part">Education</h2><a class="btn" href="#estudios-en">Education details</a></div>
+<div class="sec homeonly">
+<div class="edu"><span class="label">Diploma</span><h3>Postgraduate Diploma in Artificial Intelligence Applied to Business</h3><p>Universidad de Chile, School of Industrial Engineering. April to October 2026.</p></div>
+<div class="edu"><span class="label">Diploma</span><h3>Postgraduate Diploma in Commercial Management and Sales</h3><p>Universidad Adolfo Ibáñez, Business School. March to December 2017.</p></div>
+<div class="edu" id="titulo-en">
+  <span class="label">Professional degree</span>
+  <h3>Political Scientist and professional degree in Public Administration</h3>
+  <p>Universidad Central de Chile. 1997 to 2002.</p>
+  <p style="margin-top:8px">The program included a quantitative and management foundation: economics, statistics, algebra, accounting and income statements, and project evaluation. It is the base I use today to build business cases, analyze margins and EBITDA, and back a proposal with numbers. Within that, statistics is an enabler of the data and analytics processes that feed models.</p>
+  <div class="tags" style="margin-top:8px"><span>Economics</span><span>Statistics</span><span>Algebra</span><span>Accounting and income statements</span><span>Project evaluation</span></div>
+</div></div>
 
+<div class="detail" id="estudios-en">
+<div class="sec"><a class="back" href="#acerca-en">&larr; Back to summary</a><h1>Education details</h1></div>
 <div class="program" id="programa-ia-en">
   <span class="label">Program</span>
   <h2>Postgraduate Diploma in Artificial Intelligence Applied to Business</h2>
@@ -620,13 +649,9 @@ html:not([lang="en"]) .lang-en{display:none}
   </div>
 </section>
 
-<div class="edu">
-  <span class="label">Professional degree</span>
-  <h3>Political Scientist and professional degree in Public Administration</h3>
-  <p>Universidad Central de Chile. 1997 to 2002.</p>
-  <p style="margin-top:8px">The program included a quantitative and management foundation: economics, statistics, algebra, accounting and income statements, and project evaluation. It is the base I use today to build business cases, analyze margins and EBITDA, and back a proposal with numbers.</p>
-  <div class="tags" style="margin-top:8px"><span>Economics</span><span>Statistics</span><span>Algebra</span><span>Accounting and income statements</span><span>Project evaluation</span></div>
 </div>
+
+
 
 <footer>Some work was submitted as a group. Client and third-party data used in the workshops is not published.</footer>
 </div>
@@ -651,6 +676,13 @@ html:not([lang="en"]) .lang-en{display:none}
   set(l,false);
   var b=document.querySelectorAll(".langsw button");
   for(var i=0;i<b.length;i++){b[i].addEventListener("click",function(){set(this.getAttribute("data-l"),true);window.scrollTo(0,0)})}
+  function apply(){
+    var h=location.hash.slice(1),t=h&&document.getElementById(h);
+    document.body.setAttribute("data-view",(t&&t.closest(".detail"))?"estudios":"home");
+    if(t){t.scrollIntoView()}else{window.scrollTo(0,0)}
+  }
+  window.addEventListener("hashchange",apply);
+  apply();
 })();
 </script>
 </body>
