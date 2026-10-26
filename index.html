@@ -29,7 +29,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1
 .layout{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:40px}
 @media (min-width:920px){.layout{grid-template-columns:280px minmax(0,1fr);gap:56px}.bio{position:sticky;top:calc(24px + env(safe-area-inset-top, 0px));align-self:start;max-height:calc(100vh - 48px);overflow:auto}}
 .bio{display:flex;flex-direction:column;gap:20px;min-width:0}
-.photo{display:block;width:100%;max-width:280px;height:auto;aspect-ratio:560/642;object-fit:cover;border-radius:6px;background:var(--chip)}
+.photo{display:block;width:100%;max-width:94px;height:auto;aspect-ratio:560/642;object-fit:cover;border-radius:6px;background:var(--chip)}
 .bio h2{font-size:1.7rem}
 .bio .role{color:var(--muted);font-size:.98rem;line-height:1.45}
 .bio .place{font-size:.88rem;color:var(--muted)}
@@ -90,10 +90,23 @@ html{scroll-behavior:smooth}
 .secnav a:hover{color:var(--blue)}
 h2.part{font-size:1.7rem;padding-top:8px}
 
+
+.langsw{position:fixed;top:10px;right:max(16px, env(safe-area-inset-right, 0px));z-index:10;display:flex;gap:2px;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:3px}
+.langsw button{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.06em;background:transparent;color:var(--muted);border:0;border-radius:4px;padding:5px 10px;cursor:pointer}
+.langsw button[aria-pressed="true"]{background:var(--chip);color:var(--ink);font-weight:500}
+.langsw button:focus-visible{outline:2px solid var(--blue);outline-offset:1px}
+html[lang="en"] .lang-es{display:none}
+html:not([lang="en"]) .lang-en{display:none}
+@media (min-width:920px){body{padding-top:56px}}
 </style>
 </head>
 <body>
 
+<div class="langsw" role="group" aria-label="Idioma / Language">
+  <button type="button" data-l="es" aria-pressed="true">ES</button>
+  <button type="button" data-l="en" aria-pressed="false">EN</button>
+</div>
+<div class="lang-es" lang="es">
 <div class="layout">
 <aside class="bio" aria-label="Biografía">
   <img class="photo" src="foto_ricardo_grez.jpg" width="560" height="642" alt="Retrato de Ricardo Grez">
@@ -142,31 +155,6 @@ h2.part{font-size:1.7rem;padding-top:8px}
   <p>Me interesa la venta que parte del negocio del cliente: entender sus procesos, su flujo de caja y sus prioridades antes de hablar de tecnología. Hoy sumo a eso conocimientos aplicados de IA generativa y agéntica para resolver problemas de negocio, con el Diploma de postítulo en IA aplicada a los Negocios de la Escuela de Ingeniería Industrial de la Universidad de Chile.</p>
   <p>Actualmente me desempeño como consultor independiente y trabajo para un cliente en el desarrollo de Brújula de Marca, un MVP agéntico en etapa de pre-test que automatiza el capítulo de benchmark competitivo dentro del diagnóstico de marca para pymes, la etapa que concentra la mayor parte de las horas de trabajo experto. A partir de tres preguntas estructurales, el sistema deduce contra qué comparar, busca marcas de referencia con fuentes citadas, lee sus perfiles públicos con visión multimodal y propone candidatos a pilar de marca con su evidencia. La decisión final es siempre de una especialista, que aprueba o descarta cada candidato y deja su resolución registrada, y los cálculos de cobertura y confianza son deterministas, sin modelo de por medio. Está construido sobre el stack de Google, con Firebase y Gemini. La meta de diseño es pasar de unas 60 a 16,8 horas humanas por diagnóstico, y es una meta, no un resultado medido.</p>
 
-  <span class="label" style="margin-top:12px">Experiencia</span>
-  <div class="exp">
-    <h3>Consultor independiente</h3>
-    <div class="co">Desarrollo de proyectos para clientes</div>
-    <div class="meta"><span>desde octubre de 2026</span></div>
-    <p>Desarrollo de Brújula de Marca para un cliente, un MVP agéntico para el benchmark competitivo dentro de diagnósticos de marca para pymes.</p>
-  </div>
-  <div class="exp">
-    <h3>Gerente de Cuentas Corporaciones, Gerencia Comercial VP B2B</h3>
-    <div class="co">Claro Empresas</div>
-    <div class="meta"><span>junio 2023 a septiembre 2026</span></div>
-    <p>Estrategia y liderazgo comercial del territorio corporativo en Sector Público, Educación, Salud, Utilities, integradores y vendors tecnológicos. Lideré la célula de desarrollo del negocio de cloud público, coordinando preventa, producto y channel partners. Renovaciones estratégicas en gobierno, educación y utilities, y nuevos logos en utilities y transporte público.</p>
-  </div>
-  <div class="exp">
-    <h3>Brand Sales Specialist, Technology Lifecycle Services</h3>
-    <div class="co">IBM Chile</div>
-    <div class="meta"><span>septiembre 2021 a mayo 2023</span></div>
-    <p>Venta de servicios de ciclo de vida tecnológico (infraestructura IBM y soporte multivendor) en Servicios Financieros, Retail, Manufactura y Gobierno. Cumplimiento sobre cuota y retención total de la base instalada. Top Performer de IBM Global Sales School.</p>
-  </div>
-  <div class="exp">
-    <h3>Key Account Manager</h3>
-    <div class="co">ORION</div>
-    <div class="meta"><span>marzo 2020 a septiembre 2021</span></div>
-    <p>Venta nueva y desarrollo de base instalada en cloud, ciberseguridad, infraestructura de datos y digital workplace para el sector público. Migraciones a la nube y modernización de aplicaciones en ministerios, y renovación de la cartera municipal de Google Workspace.</p>
-  </div>
 </section>
 
 <h2 class="part" id="formacion">Formación académica</h2>
@@ -378,5 +366,288 @@ h2.part{font-size:1.7rem;padding-top:8px}
 <footer>Algunos trabajos se entregaron en grupo. Los datos de clientes y de terceros usados en los talleres no se publican.</footer>
 </div>
 </div>
+</div>
+<div class="lang-en" lang="en">
+<div class="layout">
+<aside class="bio" aria-label="Biography">
+  <img class="photo" src="foto_ricardo_grez.jpg" width="560" height="642" alt="Portrait of Ricardo Grez">
+  <div class="block">
+    <h2>Ricardo Grez</h2>
+    <p class="role">B2B commercial leader in technology</p>
+    <p class="place">Santiago, Chile</p>
+    <div class="links"><a href="https://www.linkedin.com/in/ricardogrez/" target="_blank" rel="noopener">LinkedIn</a></div>
+  </div>
+  <div class="block">
+    <span class="label">Experience</span>
+    <ul>
+      <li>Independent consultant, since October 2026</li>
+      <li>Corporate Accounts Manager, Commercial Management B2B VP, Claro Empresas, 2023 to 2026</li>
+      <li>Brand Sales Specialist, Technology Lifecycle Services, IBM Chile, 2021 to 2023</li>
+      <li>Key Account Manager, ORION, 2020 to 2021</li>
+    </ul>
+  </div>
+  <div class="block">
+    <span class="label">Education</span>
+    <ul>
+      <li><a href="#programa-ia-en">Postgraduate Diploma in Artificial Intelligence Applied to Business</a>, Universidad de Chile, 2026</li>
+      <li><a href="#uai-en">Postgraduate Diploma in Commercial Management and Sales</a>, Universidad Adolfo Ibáñez, 2017</li>
+      <li>Political Scientist and professional degree in Public Administration, Universidad Central de Chile, 2002</li>
+    </ul>
+  </div>
+  <div class="block">
+    <span class="label">Interests</span>
+    <div class="tags"><span>Multicloud</span><span>Applied AI</span><span>Agents</span><span>Public sector</span><span>Business development</span></div>
+  </div>
+</aside>
+<div class="wrap">
+<header class="sec" id="acerca-en">
+  <span class="label">Profile</span>
+  <h1>About me</h1>
+  <nav class="secnav" aria-label="Sections">
+    <a href="#carrera-en">Professional career</a>
+    <a href="#formacion-en">Education</a>
+  </nav>
+</header>
+
+<section class="sec" id="carrera-en">
+  <h2 class="part">Professional career summary</h2>
+  <p>Over 10 years of consultative selling and B2B business development of IT solutions and services for corporations and the public sector in Chile and the region, across Government, Healthcare, Education and Utilities.</p>
+  <p>I have led corporate territories, a public cloud cell and commercial teams. My work combines strategic accounts and new business: opening accounts and channels, public tenders and go-to-market strategies with partner ecosystems such as Google, AWS and Huawei, closing and renewing long-term contracts with responsibility for territory revenue and EBITDA.</p>
+  <p>I care about selling that starts from the client's business: understanding their processes, their cash flow and their priorities before talking about technology. Today I add applied knowledge of generative and agentic AI to solve business problems, through the Postgraduate Diploma in Artificial Intelligence Applied to Business at the School of Industrial Engineering of the Universidad de Chile.</p>
+  <p>I currently work as an independent consultant, developing Brújula de Marca for a client. It is an agentic MVP in pre-test stage that automates the competitive benchmark chapter of the brand diagnostic for small and medium businesses, the stage that takes most of the expert hours. From three structural questions, the system deduces what to compare against, searches for reference brands with cited sources, reads their public profiles with multimodal vision and proposes brand pillar candidates with their evidence. The final decision always belongs to a specialist, who approves or discards each candidate and leaves the resolution on record, and the coverage and confidence calculations are deterministic, with no model involved. It is built on the Google stack, with Firebase and Gemini. The design goal is to go from about 60 to 16.8 human hours per diagnostic, and it is a goal, not a measured result.</p>
+
+</section>
+
+<h2 class="part" id="formacion-en">Education</h2>
+
+<div class="program" id="programa-ia-en">
+  <span class="label">Program</span>
+  <h2>Postgraduate Diploma in Artificial Intelligence Applied to Business</h2>
+  <p>School of Industrial Engineering, Faculty of Physical and Mathematical Sciences, Universidad de Chile. April to October 2026, live online classes. I took it to add applied knowledge of generative and agentic AI to more than ten years of consultative technology sales. Here is the work and workshops from each module.</p>
+  <div class="facts">
+    <div class="fact"><b>4</b><span>modules of 24 hours</span></div>
+    <div class="fact"><b>96</b><span>teaching hours</span></div>
+    <div class="fact"><b>1</b><span>agentic MVP as final project</span></div>
+  </div>
+  <nav class="toc" aria-label="Modules">
+    <a href="#m1-en">M1 Introduction to AI</a>
+    <a href="#m2-en">M2 Data management</a>
+    <a href="#m3-en">M3 Data analytics</a>
+    <a href="#m4-en">M4 Deep learning and agents</a>
+  </nav>
+</div>
+
+<section class="mod" id="m1-en">
+  <div class="modhead">
+    <span class="label">Module 1</span>
+    <h2>Introduction to Artificial Intelligence</h2>
+    <div class="meta"><span>DPDIIIAANWK1-1</span><span>April to June 2026</span><span>24 h</span></div>
+  </div>
+  <p class="lead">From machine learning to generative AI and agents: neural networks, prompt engineering, when to use an LLM and how to evaluate it, and the ethical and legal framework of AI in business.</p>
+
+  <div class="work feature">
+    <span class="kind">Group project</span>
+    <h3>Automatic extraction and summarization of crime news in the Chilean press</h3>
+    <ul>
+      <li>Corpus of news from 11 Chilean media outlets, with documented search terms, sections and discard criteria, and the selection bias acknowledged: the work measures media coverage, not crime.</li>
+      <li>Pipeline with Claude Sonnet via API and Python with pandas: system prompt with rules, JSON output with a schema and closed categories, temperature between 0 and 0.2, and three prompt iterations with the failures found in each.</li>
+      <li>Justified choice of in-context learning over fine-tuning and RAG.</li>
+      <li>Quality evaluation with Cohen's kappa per field, blind human coders and an LLM as judge, plus two bias tests.</li>
+      <li>Finding: separating the voice of the outlet from the voice of its sources reduced high sensationalism cases from 2 to 0 in the sample.</li>
+    </ul>
+    <div class="tags"><span>LLM</span><span>Structured extraction</span><span>Evaluation</span><span>Python</span></div>
+  </div>
+
+  <div class="work">
+    <span class="kind">Assignments and workshops</span>
+    <ul>
+      <li>Workshop on AI and LLMs, and workshop on using generative AI tools.</li>
+      <li>Workshop on when to use generative AI, how to evaluate models and the difference between LLMs, agents and agentic AI.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="mod" id="m2-en">
+  <div class="modhead">
+    <span class="label">Module 2</span>
+    <h2>Data Management for AI</h2>
+    <div class="meta"><span>DPDIIIAANWK2-1</span><span>May and June 2026</span><span>24 h</span></div>
+  </div>
+  <p class="lead">Quality, storage and modeling of structured and unstructured data, relational databases, multidimensional models and data architectures for AI.</p>
+
+  <div class="work feature">
+    <span class="kind">Integrative project, group submission</span>
+    <h3>Data model for a tour company</h3>
+    <ul>
+      <li>Diagnosis of an operation that lived in loose files, emails and paper: problems of redundancy, integrity, traceability, concurrency and backup, each with a solution based on a database management system.</li>
+      <li>Normalized relational model with real business rules: people with several roles but only one per tour, itineraries by date, guide contracts, lodging and meals with penalties, and amounts in Canadian dollars.</li>
+      <li>Multidimensional model with two fact tables (participation and services) and a person dimension shared across roles, to measure tour operations.</li>
+      <li>SQL script for MySQL and diagrams in draw.io. I did the analysis of the brief and the design of both models, and built the script and the diagrams.</li>
+    </ul>
+    <div class="tags"><span>Relational model</span><span>Dimensional model</span><span>SQL</span><span>draw.io</span></div>
+  </div>
+
+  <div class="work">
+    <span class="kind">Exercises</span>
+    <ul>
+      <li>Entity-relationship models and dimensional modeling exercises, with the solution reviewed in class.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="mod" id="m3-en">
+  <div class="modhead">
+    <span class="label">Module 3</span>
+    <h2>Processes for Data Analytics</h2>
+    <div class="meta"><span>DPDIIIAANWK3-1</span><span>July and August 2026</span><span>24 h</span></div>
+  </div>
+  <p class="lead">Analytics projects with KDD and CRISP-DM, data preparation, classification, regression and segmentation oriented to business, and visualization to communicate results.</p>
+
+  <div class="work feature">
+    <span class="kind">Module assessment</span>
+    <h3>Audit of a customer churn model built by an AI</h3>
+    <ul>
+      <li>Case of a financial institution: an AI trained a logistic regression to predict churn, and the task was to critically evaluate that model.</li>
+      <li>Optimal cutoff calculated with the business cost-benefit matrix: with a false negative 50 times more costly than a false positive, the cutoff that maximizes expected outcome is 0.05.</li>
+      <li>At that cutoff the model detects 1,114 of 1,115 actual churners, at the price of many unnecessary retention campaigns. Overall accuracy drops, and that is the right call for the business.</li>
+      <li>Variable analysis: district and branch showed signal in the data and were left out of the model without justification. Verdict: a partially good model, with concrete improvements proposed.</li>
+    </ul>
+    <div class="tags"><span>Classification</span><span>Cost matrix</span><span>Python</span><span>Colab</span></div>
+  </div>
+
+  <div class="work">
+    <span class="kind">Workshops</span>
+    <ul>
+      <li>Pay gap: cleaning in Python of a salary survey of Industrial Civil Engineering graduates, with the cleaning rules documented (data preparation phase of CRISP-DM).</li>
+      <li>Classification: decision tree to anticipate churn in a bank of 10,000 customers and propose retention at a better cost.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="mod" id="m4-en">
+  <div class="modhead">
+    <span class="label">Module 4</span>
+    <h2>Deep Learning, Multimodal AI and Agents</h2>
+    <div class="meta"><span>DPDIIIAANWK4-1</span><span>August and September 2026</span><span>24 h</span></div>
+  </div>
+  <p class="lead">Deep learning, multimodal AI, causal AI, explainability, and design and orchestration of agents with MCP, skills and memory.</p>
+
+  <div class="work feature">
+    <span class="kind">Group final project</span>
+    <h3>Brújula de Marca: agentic MVP for the competitive benchmark of small and medium businesses</h3>
+    <ul>
+      <li>Problem: a brand diagnostic takes about 60 hours of expert work and 48 of them are manual research and comparison, which also leaves no trace of why each pillar was chosen.</li>
+      <li>Solution: the system automates the benchmark chapter. A form deduces with three questions what to compare against, searches for reference brands with cited sources, reads their public profiles with multimodal vision and proposes pillar candidates with their evidence.</li>
+      <li>Orchestrator and sub-agent architecture (intake, searcher, profiler and auditor), with a log that labels which agent did each step. The final decision is human and is signed off.</li>
+      <li>Google stack: Firebase, Secret Manager, Google Forms with Apps Script and Gemini. Design aligned with Anthropic's agent patterns and the NIST AI risk management framework.</li>
+      <li>In the first run with real data, the specialist discarded 3 of 7 candidates and recorded her reasons.</li>
+    </ul>
+    <p class="note">Status: MVP in pre-test, no production metrics. The reduction from 60 to 16.8 human hours per diagnostic is a design goal, not a measured result.</p>
+    <div class="tags"><span>Agents</span><span>Multimodal vision</span><span>Human in the loop</span><span>Firebase</span><span>Gemini</span></div>
+  </div>
+
+  <div class="work">
+    <span class="kind">Workshops</span>
+    <ul>
+      <li>Orchestration of agents and sub-agents in Antigravity: regression models on copper, the Fed rate, IPSA and the dollar, compared by MSE, MAPE and MBE, with logs labeled by agent.</li>
+      <li>MCP, skills and memory: connection to an MCP server of economic data (FRED) to consolidate macroeconomic series for Chile.</li>
+      <li>Applications with Google AI Studio: prototype of a brand strategy app with a conversational assistant.</li>
+      <li>Evaluation of sales pitches with generative AI: audio transcription with Gemini and automatic review, in structured JSON, of whether the salesperson mentioned product, price and plan speed.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="mod tools" id="herramientas-en">
+  <span class="label">Tools used</span>
+  <div class="tags">
+    <span>Python</span><span>pandas</span><span>Google Colab</span><span>SQL / MySQL</span><span>draw.io</span><span>Claude API</span><span>Gemini</span><span>Google AI Studio</span><span>Antigravity</span><span>MCP</span><span>Firebase</span><span>Apps Script</span>
+  </div>
+</section>
+
+
+<div class="program" id="uai-en">
+  <span class="label">Program</span>
+  <h2>Postgraduate Diploma in Commercial Management and Sales</h2>
+  <p>Business School, Universidad Adolfo Ibáñez. March to December 2017. Focused on sales team management, customer relationships and negotiation.</p>
+  <div class="facts">
+    <div class="fact"><b>5</b><span>courses completed</span></div>
+    <div class="fact"><b>2017</b><span>March to December</span></div>
+  </div>
+</div>
+
+<section class="mod">
+  <div class="modhead">
+    <span class="label">Courses</span>
+    <h2>The five courses of the diploma</h2>
+  </div>
+  <p class="lead">Management of sales teams, customer relationships, negotiation and selling.</p>
+
+  <div class="work feature">
+    <span class="kind">Course</span>
+    <h3>Leading Customer-Oriented Organizations</h3>
+    <p>How an organization becomes truly customer-oriented: putting the customer at the center of strategy and culture, designing the processes and moments of truth of the relationship, and leading people to sustain it over time.</p>
+    <div class="tags"><span>Customer orientation</span><span>Culture and leadership</span><span>Processes and moments of truth</span></div>
+  </div>
+
+  <div class="work feature">
+    <span class="kind">Course</span>
+    <h3>Customer Marketing</h3>
+    <p>Customer-centered marketing: understanding how consumers buy and decide, which factors change their behavior and how to build profitable long-term relationships with them.</p>
+    <div class="tags"><span>Consumer behavior</span><span>Customer relationship</span><span>Long-term value</span></div>
+  </div>
+
+  <div class="work feature">
+    <span class="kind">Course</span>
+    <h3>Coaching for Sales Teams</h3>
+    <p>Sales productivity often depends on management and not only on the salespeople. The course works on the role of the sales manager as a coach: teaching skills systematically and building high-performance teams.</p>
+    <div class="tags"><span>Commercial leadership</span><span>Sales coaching</span><span>High-performance teams</span></div>
+  </div>
+
+  <div class="work feature">
+    <span class="kind">Course</span>
+    <h3>Commercial Negotiation</h3>
+    <p>Negotiation applied to commercial work: defining and prioritizing goals and interests, distinguishing positions from interests and alternatives, telling distributive from collaborative negotiation, preparing in a structured way, managing emotions and listening actively to reach lasting agreements.</p>
+    <div class="tags"><span>Interests and alternatives</span><span>Collaborative negotiation</span><span>Preparation and active listening</span></div>
+  </div>
+
+  <div class="work feature">
+    <span class="kind">Course</span>
+    <h3>Sales</h3>
+    <p>A strategic view of selling. Why selling has become harder, how to add value for the company and for customers who now buy informed and through different channels, and how to improve the commercial performance of a sales force.</p>
+    <div class="tags"><span>Consultative selling</span><span>Customer value</span><span>Commercial strategy</span></div>
+  </div>
+</section>
+
+<div class="edu">
+  <span class="label">Professional degree</span>
+  <h3>Political Scientist and professional degree in Public Administration</h3>
+  <p>Universidad Central de Chile. 1997 to 2002.</p>
+</div>
+
+<footer>Some work was submitted as a group. Client and third-party data used in the workshops is not published.</footer>
+</div>
+</div>
+</div>
+<script>
+(function(){
+  var T={es:"Acerca de mí, Ricardo Grez",en:"About me, Ricardo Grez"};
+  function set(l,save){
+    document.documentElement.lang=l;
+    document.title=T[l];
+    var b=document.querySelectorAll(".langsw button");
+    for(var i=0;i<b.length;i++){b[i].setAttribute("aria-pressed",b[i].getAttribute("data-l")===l?"true":"false")}
+    if(save){try{localStorage.setItem("lang",l)}catch(e){}}
+  }
+  var l="es";
+  try{
+    var q=new URLSearchParams(location.search).get("lang");
+    var s=localStorage.getItem("lang");
+    if(q==="en"||q==="es")l=q;else if(s==="en"||s==="es")l=s;
+  }catch(e){}
+  set(l,false);
+  var b=document.querySelectorAll(".langsw button");
+  for(var i=0;i<b.length;i++){b[i].addEventListener("click",function(){set(this.getAttribute("data-l"),true);window.scrollTo(0,0)})}
+})();
+</script>
 </body>
 </html>
