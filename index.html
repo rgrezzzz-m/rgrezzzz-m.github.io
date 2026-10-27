@@ -125,6 +125,23 @@ strong{font-weight:600}
 .more summary:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
 .morebody{display:flex;flex-direction:column;gap:16px;padding-top:12px}
 @media (max-width:520px){.tl li{grid-template-columns:1fr}.lead3{font-size:1.1rem}}
+.label{font-family:var(--f-body);font-weight:600;font-size:.74rem;letter-spacing:.14em;color:var(--ink)}
+.label::before{content:"";display:inline-block;width:16px;height:2px;background:var(--gold);vertical-align:middle;margin-right:8px;transform:translateY(-1px)}
+.tags{gap:8px 14px}
+.toc,.secnav{gap:8px 14px}
+.tags span,.toc a,.secnav a{background:none;border:0;border-left:3px solid var(--blue);border-radius:0;padding:1px 10px;font-family:var(--f-body);font-size:.84rem;font-weight:500;color:var(--ink)}
+.toc a:hover,.secnav a:hover{color:var(--blue)}
+.btn{background:var(--blue);color:var(--paper);border:1px solid var(--blue);border-radius:2px;padding:9px 16px;font-family:var(--f-body);font-weight:600;font-size:.85rem;letter-spacing:.02em}
+.btn::after{content:" \2192"}
+.btn:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.btn.ghost{background:none;color:var(--blue)}
+.btn.ghost:hover{background:var(--blue);border-color:var(--blue);color:var(--paper)}
+.program,.edu,.feature{border-radius:2px;border-left:1px solid var(--line)}
+.program,.edu{border-top:3px solid var(--blue)}
+.feature{border-top:3px solid var(--gold)}
+.langsw{border-radius:2px;padding:2px;gap:0}
+.langsw button{border-radius:0;font-family:var(--f-body);font-weight:600;font-size:.76rem;letter-spacing:.08em;padding:5px 11px;border-bottom:2px solid transparent}
+.langsw button[aria-pressed="true"]{background:none;color:var(--ink);border-bottom-color:var(--gold)}
 </style>
 </head>
 <body>
@@ -143,14 +160,6 @@ strong{font-weight:600}
     <p class="place">Santiago, Chile</p>
   </div>
   <div class="block">
-    <span class="label">Formación</span>
-    <ul>
-      <li><a href="#programa-ia">Diploma de postítulo en IA aplicada a los Negocios</a>, Universidad de Chile, 2026</li>
-      <li><a href="#uai">Diploma de postítulo en Dirección Comercial y Ventas</a>, Universidad Adolfo Ibáñez, 2017</li>
-      <li>Cientista Político y título profesional de Administrador Público, Universidad Central de Chile, 2002</li>
-    </ul>
-  </div>
-  <div class="block">
     <span class="label">Intereses</span>
     <div class="tags"><span>Multi Cloud</span><span>IA aplicada a negocios</span><span>Sector público</span><span>Desarrollo de negocios</span><span>Multi industria</span></div>
   </div>
@@ -166,8 +175,8 @@ strong{font-weight:600}
 </header>
 
 <section class="sec homeonly" id="carrera">
-  <div class="sechead"><h2 class="part">Experiencia laboral</h2><span class="btns"><a class="btn" href="CV_Ricardo_Grez_ES.pdf" target="_blank" rel="noopener">CV completo</a><a class="btn" href="https://www.linkedin.com/in/ricardogrez/" target="_blank" rel="noopener">LinkedIn</a></span></div>
-  <div class="lead3"><p>Más de 10 años en venta consultiva de soluciones TI para corporaciones y sector público en Chile.</p><p>Cuentas estratégicas, nuevos negocios y cloud público, con responsabilidad sobre los ingresos y el margen, y foco en el EBITDA del negocio.</p><p>Hoy sumo IA aplicada a negocios.</p></div>
+  <div class="sechead"><h2 class="part">Experiencia laboral</h2><span class="btns"><a class="btn" href="CV_Ricardo_Grez_ES.pdf" target="_blank" rel="noopener">CV completo</a><a class="btn ghost" href="https://www.linkedin.com/in/ricardogrez/" target="_blank" rel="noopener">LinkedIn</a></span></div>
+  <div class="lead3"><p>Líder comercial senior con más de 10 años de trayectoria en venta consultiva B2B para corporaciones y grandes empresas en territorios cross-industria (Gobierno, Salud, Educación y Utilities), articulando ecosistemas de partners y vendors tecnológicos globales para estructurar y cerrar negocios de alto valor.</p><p>Cuentas estratégicas, nuevos negocios y cloud público, con responsabilidad sobre los ingresos y el margen, y foco en el EBITDA del negocio.</p><p>Hoy sumo IA aplicada a negocios.</p></div>
   <p>Actualmente soy consultor independiente y trabajo para un cliente en Brújula de Marca, un sistema agéntico en pre-test que automatiza el benchmark competitivo del diagnóstico de marca para pymes, la etapa que concentra más horas de trabajo experto. Con tres preguntas estructurales, el sistema define contra qué comparar, busca marcas de referencia con fuentes citadas, lee sus perfiles públicos con visión multimodal y propone pilares de marca con su evidencia. Una especialista aprueba o descarta cada candidato y su decisión queda registrada; los cálculos de cobertura y confianza son deterministas. <strong>Está construido sobre el stack de Google, con Firebase y Gemini. La meta de diseño es bajar de unas 60 a 16,8 horas humanas por diagnóstico: una meta, no un resultado medido.</strong></p>
   <ul class="tl"><li><span class="d">Oct 2026 a hoy</span><span><strong>Consultor independiente</strong><br><span class="s">Brújula de Marca, sistema agéntico para pymes, en pre-test</span></span></li><li><span class="d">Jun 2023 a Sep 2026</span><span><strong>Gerente de Cuentas Corporaciones, Claro Empresas</strong></span></li><li><span class="d">Sep 2021 a May 2023</span><span><strong>Brand Sales Specialist, IBM Chile</strong></span></li><li><span class="d">Mar 2020 a Sep 2021</span><span><strong>Key Account Manager, ORION</strong></span></li><li><span class="d">Ago 2015 a Mar 2020</span><span><strong>Subgerente Comercial y Key Account Manager, EMACH</strong></span></li></ul>
   <details class="more"><summary>Ver más</summary><div class="morebody"><p>Más de 10 años en venta consultiva y desarrollo de negocios B2B de soluciones y servicios TI para corporaciones y sector público en Chile y la región, en Gobierno, Salud, Educación y Utilities.</p>
@@ -182,7 +191,7 @@ strong{font-weight:600}
 <div class="edu"><span class="label">Diploma</span><h3>Diploma de postítulo en Dirección Comercial y Ventas</h3><p>Universidad Adolfo Ibáñez, Escuela de Negocios. Marzo a diciembre de 2017.</p><div class="tags" style="margin-top:8px"><span>Dirección de ventas</span><span>Coaching comercial</span><span>Negociación</span><span>Customer marketing</span><span>Orientación al cliente</span></div></div>
 <div class="edu" id="titulo">
   <span class="label">Título profesional</span>
-  <h3>Cientista Político y título profesional de Administrador Público</h3>
+  <h3>Cientista Político y título profesional en Administración (Gerencia Pública)</h3>
   <p>Universidad Central de Chile. 1997 a 2002.</p>
   <p style="margin-top:8px">La formación incluyó una base cuantitativa y de gestión: economía, estadística, álgebra, contabilidad y estados de resultados, y evaluación de proyectos. Es la base con la que hoy armo business cases, analizo márgenes y EBITDA y respaldo una propuesta con números. En ese marco, la estadística es un habilitador de los procesos de datos y analítica que alimentan modelos.</p>
   <div class="tags" style="margin-top:8px"><span>Economía</span><span>Estadística</span><span>Álgebra</span><span>Contabilidad y estados de resultados</span><span>Evaluación de proyectos</span></div>
@@ -406,14 +415,6 @@ strong{font-weight:600}
     <p class="place">Santiago, Chile</p>
   </div>
   <div class="block">
-    <span class="label">Education</span>
-    <ul>
-      <li><a href="#programa-ia-en">Postgraduate Diploma in Artificial Intelligence Applied to Business</a>, Universidad de Chile, 2026</li>
-      <li><a href="#uai-en">Postgraduate Diploma in Commercial Management and Sales</a>, Universidad Adolfo Ibáñez, 2017</li>
-      <li>Political Scientist and professional degree in Public Administration, Universidad Central de Chile, 2002</li>
-    </ul>
-  </div>
-  <div class="block">
     <span class="label">Interests</span>
     <div class="tags"><span>Multicloud</span><span>Applied AI for business</span><span>Public sector</span><span>Business development</span><span>Multi-industry</span></div>
   </div>
@@ -429,8 +430,8 @@ strong{font-weight:600}
 </header>
 
 <section class="sec homeonly" id="carrera-en">
-  <div class="sechead"><h2 class="part">Work experience</h2><span class="btns"><a class="btn" href="CV_Ricardo_Grez_EN.pdf" target="_blank" rel="noopener">Full CV</a><a class="btn" href="https://www.linkedin.com/in/ricardogrez/" target="_blank" rel="noopener">LinkedIn</a></span></div>
-  <div class="lead3"><p>Over 10 years in consultative selling of IT solutions to corporations and the public sector in Chile.</p><p>Strategic accounts, new business and public cloud, accountable for revenue and margin, with a focus on business EBITDA.</p><p>Today I add AI applied to business.</p></div>
+  <div class="sechead"><h2 class="part">Work experience</h2><span class="btns"><a class="btn" href="CV_Ricardo_Grez_EN.pdf" target="_blank" rel="noopener">Full CV</a><a class="btn ghost" href="https://www.linkedin.com/in/ricardogrez/" target="_blank" rel="noopener">LinkedIn</a></span></div>
+  <div class="lead3"><p>Senior commercial leader with over 10 years of B2B consultative selling to corporations and large enterprises across cross-industry territories (Government, Healthcare, Education and Utilities), orchestrating ecosystems of global technology partners and vendors to structure and close high-value deals.</p><p>Strategic accounts, new business and public cloud, accountable for revenue and margin, with a focus on business EBITDA.</p><p>Today I add AI applied to business.</p></div>
   <p>I currently work as an independent consultant for a client on Brújula de Marca, an agentic system in pre-test that automates the competitive benchmark within the brand diagnostic for small and medium businesses, the stage that takes the most expert hours. From three structural questions, the system decides what to compare against, searches for reference brands with cited sources, reads their public profiles with multimodal vision and proposes brand pillars with their evidence. A specialist approves or discards each candidate and the decision is recorded; coverage and confidence calculations are deterministic. <strong>It is built on the Google stack, with Firebase and Gemini. The design goal is to go from about 60 to 16.8 human hours per diagnostic: a goal, not a measured result.</strong></p>
   <ul class="tl"><li><span class="d">Oct 2026 to today</span><span><strong>Independent consultant</strong><br><span class="s">Brújula de Marca, agentic system for small businesses, in pre-test</span></span></li><li><span class="d">Jun 2023 to Sep 2026</span><span><strong>Corporate Accounts Manager, Claro Empresas</strong></span></li><li><span class="d">Sep 2021 to May 2023</span><span><strong>Brand Sales Specialist, IBM Chile</strong></span></li><li><span class="d">Mar 2020 to Sep 2021</span><span><strong>Key Account Manager, ORION</strong></span></li><li><span class="d">Aug 2015 to Mar 2020</span><span><strong>Deputy Commercial Manager and Key Account Manager, EMACH</strong></span></li></ul>
   <details class="more"><summary>Read more</summary><div class="morebody"><p>Over 10 years of consultative selling and B2B business development of IT solutions and services for corporations and the public sector in Chile and the region, across Government, Healthcare, Education and Utilities.</p>
@@ -445,7 +446,7 @@ strong{font-weight:600}
 <div class="edu"><span class="label">Diploma</span><h3>Postgraduate Diploma in Commercial Management and Sales</h3><p>Universidad Adolfo Ibáñez, Business School. March to December 2017.</p><div class="tags" style="margin-top:8px"><span>Sales management</span><span>Sales coaching</span><span>Negotiation</span><span>Customer marketing</span><span>Customer orientation</span></div></div>
 <div class="edu" id="titulo-en">
   <span class="label">Professional degree</span>
-  <h3>Political Scientist and professional degree in Public Administration</h3>
+  <h3>Political Scientist and professional degree in Administration (Public Management)</h3>
   <p>Universidad Central de Chile. 1997 to 2002.</p>
   <p style="margin-top:8px">The program included a quantitative and management foundation: economics, statistics, algebra, accounting and income statements, and project evaluation. It is the base I use today to build business cases, analyze margins and EBITDA, and back a proposal with numbers. Within that, statistics is an enabler of the data and analytics processes that feed models.</p>
   <div class="tags" style="margin-top:8px"><span>Economics</span><span>Statistics</span><span>Algebra</span><span>Accounting and income statements</span><span>Project evaluation</span></div>
