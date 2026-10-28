@@ -157,6 +157,12 @@ strong{font-weight:600}
 [id]{scroll-margin-top:72px}
 .sec>p,.morebody p{max-width:68ch}
 @media (pointer:coarse){.langsw button{min-height:44px}}
+.bio .proj{display:flex;flex-direction:column;gap:12px}
+.bio .proj p{margin:0;font-size:.86rem;line-height:1.5;color:var(--muted)}
+.bio .proj strong{display:block;color:var(--ink);font-size:.93rem;font-weight:600}
+.bio ul.certs{list-style:none;padding:0;gap:6px;font-size:.86rem;line-height:1.45;color:var(--muted)}
+.bio ul.certs b{color:var(--ink);font-weight:600;margin-right:6px}
+.sechead h1{margin-top:6px}
 </style>
 </head>
 <body>
@@ -170,11 +176,23 @@ strong{font-weight:600}
 <div class="lang-es" lang="es">
 <div class="layout">
 <aside class="bio" aria-label="Biografía">
-  <img class="photo" src="foto_ricardo_grez.jpg" width="560" height="642" alt="Retrato de Ricardo Grez">
+  <img class="photo" src="foto_ricardo_grez_2.jpg" width="560" height="642" alt="Retrato de Ricardo Grez">
   <div class="block">
     <h2>Ricardo Grez</h2>
     <p class="role">Líder comercial B2B en tecnología</p>
     <p class="place">Santiago, Chile</p>
+  </div>
+  <div class="block">
+    <span class="label">Proyectos en desarrollo</span>
+    <div class="proj">
+      <p><strong>Brújula de Marca</strong>Sistema agéntico en pre-test que automatiza el benchmark competitivo del diagnóstico de marca para pymes.</p>
+      <p><strong>Oráculo IA</strong>Base de conocimiento personal que convierte el archivo documental en una wiki consultable. OKF con el patrón LLM Wiki de Karpathy, organizado por concepto, con tres capas.</p>
+      <p><strong>Atlas</strong>Diagnóstico de madurez en IA para empresas medianas y grandes de Chile y LatAm. Traduce a un instrumento aplicable el enfoque de Bain, que organiza la transformación con IA en siete decisiones.</p>
+    </div>
+  </div>
+  <div class="block">
+    <span class="label">Certificaciones</span>
+    <ul class="certs"><li><b>2022</b> IBM Global Sales School, Top Performer</li><li><b>2022</b> IBM Quantum Business Foundations</li><li><b>2021</b> Dynatrace Partner Foundations</li><li><b>2020</b> Google Cloud Platform Sales</li><li><b>2020</b> AWS Business Professional</li><li><b>2020</b> AWS Cloud Economics</li><li><b>2017</b> Scrum Certified</li><li><b>2010</b> Optimización de Procesos, DICTUC, Pontificia Universidad Católica</li></ul>
   </div>
   <div class="block">
     <span class="label">Intereses</span>
@@ -182,16 +200,11 @@ strong{font-weight:600}
   </div>
 </aside>
 <div class="wrap">
-<header class="sec homeonly" id="acerca">
-  <span class="label">Perfil</span>
-  <h1>Acerca de mí</h1>
-</header>
-
 <section class="sec homeonly" id="carrera">
-  <div class="sechead"><h2 class="part">Experiencia laboral</h2><span class="btns"><a class="btn" href="CV_Ricardo_Grez_ES.pdf" target="_blank" rel="noopener" title="Abre el CV en PDF">CV completo (PDF)</a><a class="btn ghost" href="https://www.linkedin.com/in/ricardogrez/" target="_blank" rel="noopener">LinkedIn</a></span></div>
+  <div class="sechead" id="acerca"><div><span class="label">Perfil</span><h1>Acerca de mí</h1></div><span class="btns"><a class="btn" href="CV_Ricardo_Grez_ES.pdf" target="_blank" rel="noopener" title="Abre el CV en PDF">CV completo (PDF)</a><a class="btn ghost" href="https://www.linkedin.com/in/ricardogrez/" target="_blank" rel="noopener">LinkedIn</a></span></div>
   <div class="lead3"><p>Líder comercial senior con más de 10 años de trayectoria en venta consultiva B2B para corporaciones y grandes empresas en territorios cross-industria (Gobierno, Salud, Educación y Utilities), articulando ecosistemas de partners y vendors tecnológicos globales para estructurar y cerrar negocios de alto valor.</p><p>Cuentas estratégicas, nuevos negocios y cloud público, con responsabilidad sobre los ingresos y el margen, y foco en el EBITDA del negocio.</p><p>Hoy sumo IA aplicada a negocios.</p></div>
   <p>Actualmente soy consultor independiente y desarrollo para un cliente Brújula de Marca, un sistema agéntico en pre-test que automatiza el benchmark competitivo del diagnóstico de marca para pymes, la etapa que concentra más horas de trabajo experto. Con tres preguntas estructurales, el sistema define contra qué comparar, busca marcas de referencia con fuentes citadas, lee sus perfiles públicos con visión multimodal y propone pilares de marca con su evidencia. Una especialista aprueba o descarta cada candidato y su decisión queda registrada; los cálculos de cobertura y confianza son deterministas. <strong>Está construido sobre el stack de Google, con Firebase y Gemini. La meta de diseño es bajar de unas 60 a 16,8 horas humanas por diagnóstico: una meta, no un resultado medido.</strong></p>
-  <ul class="tl"><li><span class="d">Oct 2026 a hoy</span><span><strong>Consultor independiente</strong><br><span class="s">Brújula de Marca, sistema agéntico para pymes, en pre-test</span></span></li><li><span class="d">Jun 2023 a Sep 2026</span><span><strong>Gerente de Cuentas Corporaciones, Claro Empresas</strong></span></li><li><span class="d">Sep 2021 a May 2023</span><span><strong>Brand Sales Specialist, IBM Chile</strong></span></li><li><span class="d">Mar 2020 a Sep 2021</span><span><strong>Key Account Manager, ORION</strong></span></li><li><span class="d">Ago 2015 a Mar 2020</span><span><strong>Subgerente Comercial y Key Account Manager, EMACH</strong></span></li></ul>
+  <ul class="tl"><li><span class="d">Oct 2026 a hoy</span><span><strong>Consultor independiente</strong><br><span class="s">Brújula de Marca, sistema agéntico para pymes, en pre-test</span></span></li><li><span class="d">Jun 2023 a Sep 2026</span><span><strong>Gerente de Cuentas Corporaciones, Claro Empresas</strong></span></li><li><span class="d">Sep 2021 a May 2023</span><span><strong>Brand Sales Specialist, IBM Chile</strong><br><span class="s">Top Performer del IBM Global Sales School, programa intensivo de 6 meses</span></span></li><li><span class="d">Mar 2020 a Sep 2021</span><span><strong>Key Account Manager, ORION</strong></span></li><li><span class="d">Ago 2015 a Mar 2020</span><span><strong>Subgerente Comercial y Key Account Manager, EMACH</strong></span></li></ul>
 </section>
 
 <div class="sechead homeonly" id="formacion"><h2 class="part">Formación académica</h2><a class="btn" href="#estudios">Detalle de estudios</a></div>
@@ -418,11 +431,23 @@ strong{font-weight:600}
 <div class="lang-en" lang="en">
 <div class="layout">
 <aside class="bio" aria-label="Biography">
-  <img class="photo" src="foto_ricardo_grez.jpg" width="560" height="642" alt="Portrait of Ricardo Grez">
+  <img class="photo" src="foto_ricardo_grez_2.jpg" width="560" height="642" alt="Portrait of Ricardo Grez">
   <div class="block">
     <h2>Ricardo Grez</h2>
     <p class="role">B2B commercial leader in technology</p>
     <p class="place">Santiago, Chile</p>
+  </div>
+  <div class="block">
+    <span class="label">Projects in development</span>
+    <div class="proj">
+      <p><strong>Brújula de Marca</strong>Agentic system in pre-test that automates the competitive benchmark in brand diagnostics for small businesses.</p>
+      <p><strong>Oráculo IA</strong>Personal knowledge base that turns a document archive into a searchable wiki. OKF with Karpathy's LLM Wiki pattern, organized by concept, in three layers.</p>
+      <p><strong>Atlas</strong>AI maturity diagnostic for mid-size and large companies in Chile and LatAm. It turns Bain's approach, which organizes AI transformation around seven decisions, into an applicable instrument.</p>
+    </div>
+  </div>
+  <div class="block">
+    <span class="label">Certifications</span>
+    <ul class="certs"><li><b>2022</b> IBM Global Sales School, Top Performer</li><li><b>2022</b> IBM Quantum Business Foundations</li><li><b>2021</b> Dynatrace Partner Foundations</li><li><b>2020</b> Google Cloud Platform Sales</li><li><b>2020</b> AWS Business Professional</li><li><b>2020</b> AWS Cloud Economics</li><li><b>2017</b> Scrum Certified</li><li><b>2010</b> Process Optimization, DICTUC, Pontificia Universidad Católica</li></ul>
   </div>
   <div class="block">
     <span class="label">Interests</span>
@@ -430,16 +455,11 @@ strong{font-weight:600}
   </div>
 </aside>
 <div class="wrap">
-<header class="sec homeonly" id="acerca-en">
-  <span class="label">Profile</span>
-  <h1>About me</h1>
-</header>
-
 <section class="sec homeonly" id="carrera-en">
-  <div class="sechead"><h2 class="part">Work experience</h2><span class="btns"><a class="btn" href="CV_Ricardo_Grez_EN.pdf" target="_blank" rel="noopener" title="Opens the CV as a PDF">Full CV (PDF)</a><a class="btn ghost" href="https://www.linkedin.com/in/ricardogrez/" target="_blank" rel="noopener">LinkedIn</a></span></div>
+  <div class="sechead" id="acerca-en"><div><span class="label">Profile</span><h1>About me</h1></div><span class="btns"><a class="btn" href="CV_Ricardo_Grez_EN.pdf" target="_blank" rel="noopener" title="Opens the CV as a PDF">Full CV (PDF)</a><a class="btn ghost" href="https://www.linkedin.com/in/ricardogrez/" target="_blank" rel="noopener">LinkedIn</a></span></div>
   <div class="lead3"><p>Senior commercial leader with over 10 years of B2B consultative selling to corporations and large enterprises across cross-industry territories (Government, Healthcare, Education and Utilities), orchestrating ecosystems of global technology partners and vendors to structure and close high-value deals.</p><p>Strategic accounts, new business and public cloud, accountable for revenue and margin, with a focus on business EBITDA.</p><p>Today I add AI applied to business.</p></div>
   <p>I am currently an independent consultant, developing Brújula de Marca for a client, an agentic system in pre-test that automates the competitive benchmark within the brand diagnostic for small and medium businesses, the stage that takes the most expert hours. From three structural questions, the system decides what to compare against, searches for reference brands with cited sources, reads their public profiles with multimodal vision and proposes brand pillars with their evidence. A specialist approves or discards each candidate and the decision is recorded; coverage and confidence calculations are deterministic. <strong>It is built on the Google stack, with Firebase and Gemini. The design goal is to go from about 60 to 16.8 human hours per diagnostic: a goal, not a measured result.</strong></p>
-  <ul class="tl"><li><span class="d">Oct 2026 to today</span><span><strong>Independent consultant</strong><br><span class="s">Brújula de Marca, agentic system for small businesses, in pre-test</span></span></li><li><span class="d">Jun 2023 to Sep 2026</span><span><strong>Corporate Accounts Manager, Claro Empresas</strong></span></li><li><span class="d">Sep 2021 to May 2023</span><span><strong>Brand Sales Specialist, IBM Chile</strong></span></li><li><span class="d">Mar 2020 to Sep 2021</span><span><strong>Key Account Manager, ORION</strong></span></li><li><span class="d">Aug 2015 to Mar 2020</span><span><strong>Deputy Commercial Manager and Key Account Manager, EMACH</strong></span></li></ul>
+  <ul class="tl"><li><span class="d">Oct 2026 to today</span><span><strong>Independent consultant</strong><br><span class="s">Brújula de Marca, agentic system for small businesses, in pre-test</span></span></li><li><span class="d">Jun 2023 to Sep 2026</span><span><strong>Corporate Accounts Manager, Claro Empresas</strong></span></li><li><span class="d">Sep 2021 to May 2023</span><span><strong>Brand Sales Specialist, IBM Chile</strong><br><span class="s">Top Performer, IBM Global Sales School, 6-month intensive program</span></span></li><li><span class="d">Mar 2020 to Sep 2021</span><span><strong>Key Account Manager, ORION</strong></span></li><li><span class="d">Aug 2015 to Mar 2020</span><span><strong>Deputy Commercial Manager and Key Account Manager, EMACH</strong></span></li></ul>
 </section>
 
 <div class="sechead homeonly" id="formacion-en"><h2 class="part">Education</h2><a class="btn" href="#estudios-en">Education details</a></div>
