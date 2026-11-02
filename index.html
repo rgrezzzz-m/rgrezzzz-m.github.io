@@ -164,6 +164,21 @@ strong{font-weight:600}
 .bio ul.certs b{color:var(--ink);font-weight:600;margin-right:6px}
 .sechead h1{margin-top:6px}
 .lead3 p:nth-child(2){margin-top:14px}
+.idcard,.extras{display:flex;flex-direction:column;gap:20px}
+.idrow{display:flex;flex-direction:column;gap:20px}
+.mtags{display:none}
+@media (max-width:919px){
+.layout{display:flex;flex-direction:column;gap:32px}
+.bio{display:contents}
+.idcard{order:0;gap:14px}
+.wrap{order:1}
+.extras{order:2}
+.idrow{flex-direction:row;align-items:center;gap:16px}
+.idrow .photo{width:88px;max-width:88px;flex:none}
+.idrow h2{font-size:1.45rem}
+.idrow .block{gap:2px}
+.mtags{display:flex}
+}
 </style>
 </head>
 <body>
@@ -177,12 +192,18 @@ strong{font-weight:600}
 <div class="lang-es" lang="es">
 <div class="layout">
 <aside class="bio" aria-label="Biografía">
+  <div class="idcard">
+  <div class="idrow">
   <img class="photo" src="foto_ricardo_grez_2.jpg" width="560" height="642" alt="Retrato de Ricardo Grez">
   <div class="block">
     <h2>Ricardo Grez</h2>
     <p class="role">Líder comercial B2B en tecnología</p>
     <p class="place">Santiago, Chile</p>
   </div>
+  </div>
+  <div class="tags mtags"><span>Top Performer, IBM Global Sales School</span><span>Diploma de postítulo en IA aplicada a los Negocios, Universidad de Chile</span></div>
+  </div>
+  <div class="extras">
   <div class="block">
     <span class="label">Proyectos en desarrollo</span>
     <div class="proj">
@@ -198,6 +219,7 @@ strong{font-weight:600}
   <div class="block">
     <span class="label">Intereses</span>
     <div class="tags"><span>Multi Cloud</span><span>IA aplicada a negocios</span><span>Sector público</span><span>Desarrollo de negocios</span><span>Multi industria</span></div>
+  </div>
   </div>
 </aside>
 <div class="wrap">
@@ -432,12 +454,18 @@ strong{font-weight:600}
 <div class="lang-en" lang="en">
 <div class="layout">
 <aside class="bio" aria-label="Biography">
+  <div class="idcard">
+  <div class="idrow">
   <img class="photo" src="foto_ricardo_grez_2.jpg" width="560" height="642" alt="Portrait of Ricardo Grez">
   <div class="block">
     <h2>Ricardo Grez</h2>
     <p class="role">B2B commercial leader in technology</p>
     <p class="place">Santiago, Chile</p>
   </div>
+  </div>
+  <div class="tags mtags"><span>Top Performer, IBM Global Sales School</span><span>Postgraduate Diploma in AI Applied to Business, Universidad de Chile</span></div>
+  </div>
+  <div class="extras">
   <div class="block">
     <span class="label">Projects in development</span>
     <div class="proj">
@@ -453,6 +481,7 @@ strong{font-weight:600}
   <div class="block">
     <span class="label">Interests</span>
     <div class="tags"><span>Multicloud</span><span>Applied AI for business</span><span>Public sector</span><span>Business development</span><span>Multi-industry</span></div>
+  </div>
   </div>
 </aside>
 <div class="wrap">
